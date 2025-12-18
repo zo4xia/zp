@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GLM-4-Voice Clay</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style id="base-styles">
+      :root {
+        /* Default Theme: Clay Light */
+        --bg-color: #FFF5D9;
+        --text-color: #5D4037;
+        --accent-color: #8D6E63;
+        --primary-btn: #F37070;
+        --secondary-btn: #F0F4F8;
+        --success-color: #A7F3D0;
+        --error-color: #FFEEEE;
+        --error-border: #F37070;
+        
+        /* Shadows */
+        --shadow-light: rgba(255, 255, 255, 0.8);
+        --shadow-dark: rgba(210, 180, 140, 0.4);
+        --inner-shadow-light: rgba(255, 255, 255, 0.5);
+        --inner-shadow-dark: rgba(210, 180, 140, 0.1);
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: 'Nunito', sans-serif;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      /* Claymorphism Utilities */
+      .clay-card {
+        background-color: var(--bg-color);
+        border-radius: 32px;
+        box-shadow: 
+          16px 16px 32px var(--shadow-dark), 
+          -16px -16px 32px var(--shadow-light),
+          inset -4px -4px 8px var(--inner-shadow-dark),
+          inset 4px 4px 8px var(--inner-shadow-light);
+        transition: all 0.3s ease;
+      }
+
+      .clay-input {
+        background-color: var(--bg-color);
+        border: none;
+        border-radius: 16px;
+        padding: 12px 16px;
+        color: var(--text-color);
+        width: 100%;
+        outline: none;
+        box-shadow: 
+          inset 4px 4px 8px var(--inner-shadow-dark),
+          inset -4px -4px 8px var(--inner-shadow-light);
+        transition: all 0.2s ease;
+      }
+      
+      .clay-input:focus {
+        box-shadow: 
+          inset 6px 6px 12px var(--inner-shadow-dark),
+          inset -6px -6px 12px var(--inner-shadow-light);
+      }
+
+      .clay-btn {
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 50%; /* Default round, override for rect */
+        box-shadow: 
+          12px 12px 24px var(--shadow-dark), 
+          -12px -12px 24px var(--shadow-light),
+          inset -2px -2px 6px var(--inner-shadow-dark),
+          inset 2px 2px 6px var(--inner-shadow-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .clay-btn:active {
+        transform: scale(0.95);
+        box-shadow: 
+          inset 6px 6px 12px var(--shadow-dark), 
+          inset -6px -6px 12px var(--shadow-light);
+      }
+      
+      .clay-btn.rect {
+        border-radius: 16px;
+      }
+
+      .clay-btn-primary {
+        background-color: var(--primary-btn);
+        color: white;
+        box-shadow: 
+          8px 8px 20px rgba(0,0,0, 0.15), 
+          -8px -8px 20px rgba(255, 255, 255, 0.4),
+          inset -4px -4px 8px rgba(0,0,0, 0.1),
+          inset 4px 4px 8px rgba(255, 255, 255, 0.4);
+      }
+
+      .clay-btn-primary:active {
+         box-shadow: 
+          inset 4px 4px 10px rgba(0,0,0, 0.2), 
+          inset -4px -4px 10px rgba(255, 255, 255, 0.2);
+      }
+
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+      
+      /* Animation for modal */
+      @keyframes slideUp {
+        from { transform: translateY(100%); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      .animate-slide-up {
+        animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+    </style>
+    <!-- Placeholder for custom user styles -->
+    <style id="theme-style"></style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
